@@ -51,7 +51,7 @@ fun CameraPreview(
                 )
             }
             // Overlay: Rounded rectangle for focus
-            CameraFocusOverlay(modifier = Modifier.fillMaxSize())
+//            CameraFocusOverlay(modifier = Modifier.fillMaxSize())
         }
 
         // Bottom 50%: Detected text, language, and translation
@@ -76,8 +76,8 @@ fun CameraPreview(
                     Column(
                         modifier = Modifier.padding(16.dp)
                     ) {
-                        Text(text = state.detectedLanguage, fontWeight = FontWeight.Bold)
-                        Text(text = state.detectedText)
+                        Text(text = state.recognizedLanguageDisplayName(), fontWeight = FontWeight.Bold)
+                        Text(text = state.recognizedText)
                     }
                 }
 

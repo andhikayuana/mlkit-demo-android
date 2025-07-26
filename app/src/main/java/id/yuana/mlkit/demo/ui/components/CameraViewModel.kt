@@ -9,6 +9,8 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.lifecycle.awaitInstance
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import id.yuana.mlkit.demo.analyzer.TextAnalyzer
 import kotlinx.coroutines.awaitCancellation
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -26,6 +28,7 @@ class CameraViewModel : ViewModel() {
         }
     }
 
+
     private val executroAnalyzer = Executors.newSingleThreadExecutor()
     private val imageAnalysisUseCase = ImageAnalysis.Builder()
         .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
@@ -33,6 +36,20 @@ class CameraViewModel : ViewModel() {
 
     suspend fun bindToCamera(appContext: Context, lifecycleOwner: LifecycleOwner) {
         val processCameraProvider = ProcessCameraProvider.awaitInstance(appContext)
+
+        imageAnalysisUseCase.clearAnalyzer()
+        imageAnalysisUseCase.setAnalyzer(
+            executroAnalyzer,
+            TextAnalyzer(viewModelScope) { result ->
+                _state.update {
+                    it.copy(
+                        recognizedText = result.recognizedText,
+                        recognizedLanguage = result.recognizedLanguage
+                    )
+                }
+
+            }
+        )
 
         val useCases = listOf<UseCase>(
             cameraPreviewUseCase,
