@@ -1,5 +1,7 @@
 # mlkit-demo-android
-ML Kit Demo Android
+
+ML Kit Demo Android for Google I/O Extended 2025 Android Workshop
+> Recognize, Identify Language and Translate text with ML Kit and CameraX: Android
 
 ## Requirements
 
@@ -8,4 +10,12 @@ ML Kit Demo Android
 * Android Studio Narwhal + SDK
 * Android Emulator or Device
 
+## Slide
 
+_TODO_
+
+## Demo
+
+| EN-ID                      | FR-ID                      |
+|----------------------------|----------------------------|
+| ![EN-ID](./demo/en-id.gif) | ![FR-ID](./demo/fr-id.gif) |
