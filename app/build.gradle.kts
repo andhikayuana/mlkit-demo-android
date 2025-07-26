@@ -49,6 +49,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.viewmodel.compose)
+    implementation(libs.bundles.androidx.camerax)
+    implementation(libs.bundles.google.mlkit)
+    implementation(libs.accompanist.permissions)
 
     testImplementation(libs.junit)
 

@@ -8,6 +8,7 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.9.2"
 activityCompose = "1.10.1"
 composeBom = "2024.09.00"
+androidx-camerax = "1.5.0-beta01"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -24,6 +25,31 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-viewmodel-compose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.8.5"
+androidx-camerax-core = { module = "androidx.camera:camera-core", version.ref = "androidx-camerax" }
+androidx-camerax-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "androidx-camerax" }
+androidx-camerax-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "androidx-camerax" }
+androidx-camerax-compose = { module = "androidx.camera:camera-compose", version.ref = "androidx-camerax" }
+androidx-camerax-extensions = { module = "androidx.camera:camera-extensions", version.ref = "androidx-camerax" }
+google-mlkit-text-recognition = "com.google.mlkit:text-recognition:16.0.1"
+google-mlkit-language-id = "com.google.mlkit:language-id:17.0.6"
+google-mlkit-translate = "com.google.mlkit:translate:17.0.3"
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version = "0.37.3" }
+
+
+[bundles]
+androidx-camerax = [
+    "androidx-camerax-core",
+    "androidx-camerax-camera2",
+    "androidx-camerax-lifecycle",
+    "androidx-camerax-compose",
+    "androidx-camerax-extensions"
+]
+google-mlkit = [
+    "google-mlkit-text-recognition",
+    "google-mlkit-language-id",
+    "google-mlkit-translate"
+]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
