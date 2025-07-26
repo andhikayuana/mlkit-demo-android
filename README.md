@@ -12,7 +12,7 @@ ML Kit Demo Android for Google I/O Extended 2025 Android Workshop
 
 ## Slide
 
-_TODO_
+[Slide](https://docs.google.com/presentation/d/1fYYYlQGaMtAPOXndFM0Viyph0GdUnmBP8LP-4SaNjWM/edit?usp=sharing)
 
 ## Demo
 
