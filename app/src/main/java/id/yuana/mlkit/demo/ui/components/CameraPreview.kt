@@ -95,7 +95,7 @@ fun CameraPreview(
                         Text(
                             text = stringResource(
                                 R.string.result_translation_indonesian,
-                                state.translatedText
+                                state.translatedTextResult()
                             )
                         )
                     }

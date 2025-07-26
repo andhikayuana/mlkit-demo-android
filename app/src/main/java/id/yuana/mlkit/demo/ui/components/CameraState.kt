@@ -11,8 +11,29 @@ data class CameraState(
     val targetLanguage: String = TranslateLanguage.INDONESIAN,
     val translatedText: String = "",
     val isTranslating: Boolean = false,
+
+    //track translation
+    val lastRecognizedText: String? = null,
+    val lastRecognizedLanguage: String? = null,
 )
 
 fun CameraState.recognizedLanguageDisplayName(): String {
     return runCatching { Locale(recognizedLanguage).displayName }.getOrDefault("")
+}
+
+fun CameraState.canTranslate(): Boolean {
+    return recognizedText.isNotEmpty() && recognizedLanguage != null
+}
+
+fun CameraState.translatedTextResult(): String {
+    return when {
+        isTranslating -> "Translating..."
+        translatedText.isNotEmpty() -> translatedText
+        else -> ""
+    }
+}
+
+fun CameraState.isTranslationNeeded(): Boolean {
+    return recognizedText != lastRecognizedText ||
+            recognizedLanguage != lastRecognizedLanguage
 }
