@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ML Kit Demo</string>
+    <string name="camera_permission_request">We need your permission to show the camera</string>
+    <string name="camera_permission_rationale">Camera access is required.\nPlease grant camera permission to continue using this feature.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="result_translation_indonesian">Result (Indonesian): %1$s</string>
 </resources>
